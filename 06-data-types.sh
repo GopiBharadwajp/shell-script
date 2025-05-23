@@ -7,4 +7,4 @@ TIMESTAMP=$(date)
 echo "script exuted at: $TIMESTAMP"
 SUM=$((NUMBER1+$NUMBER2))
 
-echo "SUM Of $NUMBER1 AND $NUMBER2 is: $SUM
+echo "SUM Of $NUMBER1 AND $NUMBER2 is: $SUM"
