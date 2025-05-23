@@ -1,5 +1,5 @@
 #!/bin/bash
-PERSON1=Trump
+PERSON1=Modi
 PERSON2=Musk
 
 
