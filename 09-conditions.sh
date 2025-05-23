@@ -10,5 +10,5 @@ echo "given number $NUMBER is less than 10"
 
 else
 echo "given number $NUMBER is not less than 10"
-
+# new line
 fi
