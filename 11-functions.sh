@@ -25,7 +25,6 @@ then
 echo "my sql not instelled  going to intall it"
 dnf install mysql -y
 VALIDATE $? "mysql"
-fi
 else 
 echo "my sql alredy installed nothimg to do"
 fi
