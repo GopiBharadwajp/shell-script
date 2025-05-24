@@ -13,6 +13,8 @@ echo "you are running with root acess"
 fi
 dnf list installed mysql
 
+# check alredy installer=d or noy if installed $? is 0 then 
+# if not installed  $? is not 0. expressinon is true
 if [ $? -ne 0 ]
 
 then
