@@ -10,7 +10,7 @@ else
 echo "run with root access"
 fi
 VALIDATE(){
-    if[$? -ne 0 ]
+    if[ $? -ne 0 ]
  then 
  echo "installing $2 is ....sucess"
 else 
