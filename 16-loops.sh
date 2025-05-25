@@ -41,7 +41,7 @@ echo " $PACKAGE is installed .... going to install it "| tee -a $LOG_FILE
 dnf install $PACKAGE -y &>>$LOG_FILE
 VALIDATE $? "$packeges"
 else 
-echo -e "installing $2 is $r failuer $N"  | tee -a $LOG_FILE
+echo -e "Nothing to do $package....$Y alredy installed $N"  | tee -a $LOG_FILE
 
 fi
 done
