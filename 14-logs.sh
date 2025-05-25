@@ -49,7 +49,7 @@ else
 echo -e "python3 $Y alredy installed $N nothimg to do" &>>$LOG_FILE | tee -a $LOG_FILE
 fi
 
-dnf list installed nginx &>>$LOG_FILE | tee -a $LOG_FILE
+dnf list installed nginx &>>$LOG_FILE 
 if [ $? -ne 0 ]
 then 
 echo "my sql not instelled  going to intall it" &>>$LOG_FILE | tee -a $LOG_FILE
