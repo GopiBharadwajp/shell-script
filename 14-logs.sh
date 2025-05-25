@@ -12,7 +12,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 
 echo "script started executing at : $(date)" &>>$LOG_FILE
-if [ id -ne 0 ]
+if [ $USERID -ne 0 ]
 
 then 
 echo -e"$R Error:: you need to run in root user $N" &>>$LOG_FILE
