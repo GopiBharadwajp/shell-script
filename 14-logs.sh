@@ -6,50 +6,56 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 LOGS_FOLDER="/var/log/shellscript-logs"
+SCRIPT_NAME=$( echo $0 |cut -d "." -f1)
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+
+mkdir -p $LOGS_FOLDER
+
+echo "script started executing at : $(date)" &>>$LOG_FILE
 if [ id -ne 0 ]
 
 then 
-echo -e"$R Error:: you need to run in root user $N"
+echo -e"$R Error:: you need to run in root user $N" &>>$LOG_FILE
 else 
-echo "run with root access"
+echo "run with root access" &>>$LOG_FILE
 fi
 VALIDATE(){
     if [ $? -ne 0 ]
  then 
- echo -e "installing $2 is ....$G sucess $N"
+ echo -e "installing $2 is ....$G sucess $N" &>>$LOG_FILE
 else 
-echo -e "installing $2 is $r failuer $N"
-exit 1
+echo -e "installing $2 is $r failuer $N" &>>$LOG_FILE
+exit 1 
 fi
 }
 
-dnf list installed mysql
+dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
-echo "my sql not instelled  going to intall it"
-dnf install mysql -y
+echo "my sql not instelled  going to intall it" &>>$LOG_FILE
+dnf install mysql -y &>>$LOG_FILE
 VALIDATE $? "mysql"
 else 
-echo -e "my sql $Y alredy installed nothimg to do $N"
+echo -e "my sql $Y alredy installed nothimg to do $N" &>>$LOG_FILE
 fi
 
-dnf list installed python3
+dnf list installed python3 &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
-echo "my sql not instelled  going to intall it"
-dnf install python3 -y
+echo "my sql not instelled  going to intall it" &>>$LOG_FILE
+dnf install python3 -y &>>$LOG_FILE
 VALIDATE $? "python3"
 else 
-echo -e "python3 $Y alredy installed $N nothimg to do"
+echo -e "python3 $Y alredy installed $N nothimg to do" &>>$LOG_FILE
 fi
 
-dnf list installed nginx
+dnf list installed nginx &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
-echo "my sql not instelled  going to intall it"
-dnf install nginx -y
+echo "my sql not instelled  going to intall it" &>>$LOG_FILE
+dnf install nginx -y &>>$LOG_FILE
 VALIDATE $? ""nginx
 else 
-echo -e  "nginx   $R alredy installed $N nothimg to do"
+echo -e  "nginx   $R alredy installed $N nothimg to do"&>>$LOG_FILE
 fi
 
